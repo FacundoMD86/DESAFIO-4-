@@ -38,7 +38,6 @@ const env = async () => {
 env();
 
 const socket = io();
-//socket.emit('message', 'Hola, soy un mensaje del front');
 socket.on('actualizacion', data => {
     console.log(data);
 });

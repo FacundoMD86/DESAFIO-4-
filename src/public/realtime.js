@@ -5,7 +5,6 @@ socketCliente.on("productos", (products) => {
   updateProductList(products);
 });
 
-// Función para actualizar la lista de productos en la página web
 function readProducts(products) {
   let div = document.getElementById("list-products");
   let productos = "";

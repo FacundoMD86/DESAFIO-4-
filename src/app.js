@@ -53,7 +53,7 @@ socketServer.on("connection",async (socket)=>{
 
     socket.on('addProduct', async data => {
         await pmanager.addProduct(data);
-        const updatedProducts = await pmanager.getProduct({}); // Obtener la lista actualizada de productos
+        const updatedProducts = await pmanager.getProduct({}); 
         socket.emit('productosUpdated', updatedProducts);
       });
 
