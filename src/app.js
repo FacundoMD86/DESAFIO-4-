@@ -52,7 +52,7 @@ socketServer.on("connection",async (socket)=>{
     socket.emit('productos', products);
 
     socket.on('addProduct', async data => {
-        await pmanager.addProduct(data);
+        await pmanager.createProduct(data);
         const updatedProducts = await pmanager.getProduct(); 
         socket.emit('productosUpdated', updatedProducts);
       });

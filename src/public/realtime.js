@@ -1,5 +1,3 @@
-const socketCliente = io();
-
 function updateProductList(productos) {
   let div = document.getElementById("list-products");
   let productsHTML = "";
@@ -35,6 +33,8 @@ function updateProductList(productos) {
 
   div.innerHTML = productsHTML;
 }
+const socketCliente = io();
+
 let form = document.getElementById("formProduct");
 form.addEventListener("submit", (evt) => {
   evt.preventDefault();
