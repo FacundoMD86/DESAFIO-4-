@@ -48,19 +48,19 @@ const pmanager=new ProductManager( __dirname +"/files/productos.json")
 
 socketServer.on("connection",async (socket)=>{
     console.log("cliente conectado con id:" ,socket.id)
-    const products = await pmanager.getProduct({});
+    const products = await pmanager.readProduct();
     socket.emit('productos', products);
 
     socket.on('addProduct', async data => {
         await pmanager.addProduct(data);
-        const updatedProducts = await pmanager.getProduct({}); 
+        const updatedProducts = await pmanager.getProduct(); 
         socket.emit('productosUpdated', updatedProducts);
       });
 
       socket.on("deleteProduct", async (id) => {
         console.log("ID del producto a eliminar:", id);
         const deletedProduct = await pmanager.deleteProduct(id);
-        const updatedProducts = await pmanager.getProduct({});
+        const updatedProducts = await pmanager.getProduct();
         socketServer.emit("productosUpdated", updatedProducts);
       });
 })

@@ -21,7 +21,7 @@ const env = async () => {
             status: true,
             stock: '100',
             category: 'caños',
-            thumbnail: null 
+            thumbnail: 'https://www.grupodema.com.ar/uploads/documents/074dca2aedab1605449ad75cba9237bcdb1b8318.png', 
         };
 
     await deposito.createProduct(producto);
